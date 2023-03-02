@@ -1,0 +1,714 @@
+{
+  "name": "6d664395-6339-41a0-89b4-ec5581ed6538",
+  "displayName": "Entry Confirmation / Disambiguation",
+  "form": {
+    "parameters": [ {
+      "displayName": "living_network_issue_type",
+      "required": true,
+      "entityType": "@living_network_issue_type",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "setParameterActions": [ {
+            "parameter": "confidence",
+            "value": 1
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "condition": "$session.params.living_network_feature != \"Call Translate\"",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "payload": {
+                "channel": "LPDEFAULT",
+                "payload": [ {
+                  "content": {
+                    "elements": [ {
+                      "actionText": "Activate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Activate",
+                      "tooltip": "Activate",
+                      "type": "button"
+                    }, {
+                      "actionText": "Deactivate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Deactivate",
+                      "tooltip": "Deactivate",
+                      "type": "button"
+                    }, {
+                      "actionText": "General Information",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "General Information",
+                      "tooltip": "General Information",
+                      "type": "button"
+                    } ],
+                    "title": "I didn't quite catch that. Please tell me more of what you would like to do?",
+                    "type": "vertical"
+                  },
+                  "type": "QuickReplies"
+                } ]
+              },
+              "languageCode": "en-au"
+            } ]
+          },
+          "name": "5cdabe99-8c7a-4846-979e-bb4128cf7996"
+        }, {
+          "condition": "$session.params.living_network_feature != \"Call Translate\"",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "payload": {
+                "channel": "LPDEFAULT",
+                "payload": [ {
+                  "content": {
+                    "elements": [ {
+                      "actionText": "Activate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Activate",
+                      "tooltip": "Activate",
+                      "type": "button"
+                    }, {
+                      "actionText": "Deactivate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Deactivate",
+                      "tooltip": "Deactivate",
+                      "type": "button"
+                    }, {
+                      "actionText": "General Information",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "General Information",
+                      "tooltip": "General Information",
+                      "type": "button"
+                    } ],
+                    "title": "I still didn't get that. Please select an option below:",
+                    "type": "vertical"
+                  },
+                  "type": "QuickReplies"
+                } ]
+              },
+              "languageCode": "en-au"
+            } ]
+          },
+          "name": "957d5db4-91fc-4e1b-a352-fb8394c97a8a"
+        }, {
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "handover_reason",
+              "value": "multiple_fallbacks"
+            } ]
+          },
+          "name": "3d9591fa-d3ae-4f9b-8a00-9c3bd9341ab6"
+        }, {
+          "condition": "$session.params.living_network_feature = \"Call Translate\"",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "payload": {
+                "channel": "LPDEFAULT",
+                "payload": [ {
+                  "content": {
+                    "elements": [ {
+                      "actionText": "Activate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Activate",
+                      "tooltip": "Activate",
+                      "type": "button"
+                    }, {
+                      "actionText": "Unsubscribe",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Unsubscribe",
+                      "tooltip": "Unsubscribe",
+                      "type": "button"
+                    }, {
+                      "actionText": "General Information",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "General Information",
+                      "tooltip": "General Information",
+                      "type": "button"
+                    } ],
+                    "title": "I didn't quite catch that. Please tell me more of what you would like to do?",
+                    "type": "vertical"
+                  },
+                  "type": "QuickReplies"
+                } ]
+              },
+              "languageCode": "en-au"
+            } ]
+          },
+          "name": "beac920d-0ce7-47fa-99c5-ff054f316e6c"
+        }, {
+          "condition": "$session.params.living_network_feature = \"Call Translate\"",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "payload": {
+                "channel": "LPDEFAULT",
+                "payload": [ {
+                  "content": {
+                    "elements": [ {
+                      "actionText": "Activate",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Activate",
+                      "tooltip": "Activate",
+                      "type": "button"
+                    }, {
+                      "actionText": "Unsubscribe",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "Unsubscribe",
+                      "tooltip": "Unsubscribe",
+                      "type": "button"
+                    }, {
+                      "actionText": "General Information",
+                      "actionType": "publishText",
+                      "style": "QUICK_REPLY_BUTTON",
+                      "title": "General Information",
+                      "tooltip": "General Information",
+                      "type": "button"
+                    } ],
+                    "title": "I still didn't get that. Please select an option below:",
+                    "type": "vertical"
+                  },
+                  "type": "QuickReplies"
+                } ]
+              },
+              "languageCode": "en-au"
+            } ]
+          },
+          "name": "91b87c43-a98e-4086-a2f9-eb87c5ce4de9"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "confirmation.yes",
+    "condition": "$session.params.living_network_feature = \"Caller ID\" AND $session.params.device_confirmed = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Home Phone",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Home Phone",
+                "tooltip": "Home Phone",
+                "type": "button"
+              }, {
+                "actionText": "Mobile",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Mobile",
+                "tooltip": "Mobile",
+                "type": "button"
+              } ],
+              "title": "So I can tell you more about Caller ID let me know if you need help with your Home Phone or Mobile?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "confidence",
+        "value": 1
+      }, {
+        "parameter": "device_type",
+        "value": "undefined"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "5c972e4e-39e1-4d48-88c6-893f764fc508"
+  }, {
+    "intent": "confirmation.yes",
+    "condition": "$session.params.living_network_feature = \"Call Translate\" AND $session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Unsubscribe",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Unsubscribe",
+                "tooltip": "Unsubscribe",
+                "type": "button"
+              }, {
+                "actionText": "General Information",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "General Information",
+                "tooltip": "General Information",
+                "type": "button"
+              } ],
+              "title": "Great! Tell me a little more about what you would like to do?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "433e6636-b448-408a-8748-6237a75f8e6c"
+  }, {
+    "intent": "confirmation.yes",
+    "condition": "$session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "General Information",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "General Information",
+                "tooltip": "General Information",
+                "type": "button"
+              } ],
+              "title": "Great! Tell me a little more about what you would like to do?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "46719a2e-bf93-4213-8467-e30eede0db9d"
+  }, {
+    "intent": "confirmation.yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confidence",
+        "value": 1
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "970d3e7a-8258-4d9b-8fd0-70ab4a5f81f4"
+  }, {
+    "intent": "confirmation.no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "handover_reason",
+        "value": "entry_confirmation_no"
+      } ]
+    },
+    "name": "aab803df-069a-48ce-ba01-50e65e9ad563"
+  }, {
+    "intent": "QR.living_network.home_phone",
+    "condition": "$session.params.living_network_feature = \"Caller ID\" AND $session.params.living_network_issue_type != \"vague\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "device_confirmed",
+        "value": true
+      }, {
+        "parameter": "device_type",
+        "value": "home phone"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "5edfbde3-5b6d-4450-bcab-b39345f618fc"
+  }, {
+    "intent": "QR.living_network.mobile",
+    "condition": "$session.params.living_network_feature = \"Caller ID\" AND $session.params.living_network_issue_type != \"vague\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "device_confirmed",
+        "value": true
+      }, {
+        "parameter": "device_type",
+        "value": "mobile"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "6b8a2630-ae9d-40d5-a90a-714acd657efa"
+  }, {
+    "intent": "QR.living_network.home_phone",
+    "condition": "$session.params.living_network_feature = \"Caller ID\" AND $session.params.device_confirmed = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "General Information",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "General Information",
+                "tooltip": "General Information",
+                "type": "button"
+              } ],
+              "title": "Great! Tell me a little more about what you would like to do?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "device_confirmed",
+        "value": true
+      }, {
+        "parameter": "living_network_issue_type",
+        "value": null
+      }, {
+        "parameter": "device_type",
+        "value": "home phone"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "16f38e59-75db-4284-93e7-7ff4ad01c95d"
+  }, {
+    "intent": "QR.living_network.mobile",
+    "condition": "$session.params.living_network_feature = \"Caller ID\" AND $session.params.device_confirmed = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "General Information",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "General Information",
+                "tooltip": "General Information",
+                "type": "button"
+              } ],
+              "title": "Great! Tell me a little more about what you would like to do?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "device_confirmed",
+        "value": true
+      }, {
+        "parameter": "living_network_issue_type",
+        "value": null
+      }, {
+        "parameter": "device_type",
+        "value": "mobile"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "f1780422-1c7e-4867-94d1-1fc9be7800d7"
+  }, {
+    "condition": "$session.params.living_network_issue_type != \"vague\" AND $session.params.living_network_issue_type != null AND $session.params.confidence \u003e= .9 AND $session.params.device_confirmed != false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Previous Page",
+    "name": "7a4d4f53-3996-4d53-a3e6-bed142e10c64"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "name": "decb0b43-9beb-402b-89de-a576faff96e4"
+  } ],
+  "eventHandlers": [ {
+    "condition": "$session.params.living_network_issue_type = \"vague\" AND $session.params.device_type != \"undefined\"",
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "I didn't quite catch that. Would you like to know more about $session.params.living_network_feature?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "a5a6faad-9951-45a9-85d9-4468a1baa02e"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"vague\" AND $session.params.device_type != \"undefined\"",
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "I still didn't get that. Would you like to know more about $session.params.living_network_feature? Please answer Yes/No.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "7dab5479-47c5-414d-bb50-c393daaa2d1e"
+  }, {
+    "condition": "$session.params.living_network_issue_type != \"vague\" AND $session.params.confidence \u003c .9",
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "I didn't quite catch that. You want to $session.params.living_network_issue_type $session.params.living_network_feature, is that correct?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "786ab0d5-57af-49fa-b0cc-1498c0f0291e"
+  }, {
+    "condition": "$session.params.living_network_issue_type != \"vague\" AND $session.params.confidence \u003c .9",
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "I still didn't get that. You want to $session.params.living_network_issue_type $session.params.living_network_feature, is that correct? Please answer Yes/No.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "a38fdb2e-3528-494c-b8e3-89ca5719bcaf"
+  }, {
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "handover_reason",
+        "value": "multiple_fallbacks"
+      } ]
+    },
+    "name": "c7d90e93-806c-4d9d-88bf-68d37bfa810c"
+  }, {
+    "condition": "$session.params.device_type = \"undefined\"",
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Home Phone",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Home Phone",
+                "tooltip": "Home Phone",
+                "type": "button"
+              }, {
+                "actionText": "Mobile",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Mobile",
+                "tooltip": "Mobile",
+                "type": "button"
+              } ],
+              "title": "I didn't quite catch that. Let me know if you need help with your Home Phone or Mobile?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "5c55d91a-69c6-46a7-9358-c7e55ed1b99c"
+  }, {
+    "condition": "$session.params.device_type = \"undefined\"",
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Home Phone",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Home Phone",
+                "tooltip": "Home Phone",
+                "type": "button"
+              }, {
+                "actionText": "Mobile",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Mobile",
+                "tooltip": "Mobile",
+                "type": "button"
+              } ],
+              "title": "I still didn't get that. Let me know if you need help with your Home Phone or Mobile? Please select an option below:",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "46c9e853-0483-43bd-a1f2-21030240f109"
+  } ]
+}

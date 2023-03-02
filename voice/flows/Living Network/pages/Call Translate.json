@@ -1,0 +1,228 @@
+{
+  "name": "09510905-3eeb-421c-b616-1435b48eb3d8",
+  "displayName": "Call Translate",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Ok, let me confirm, would you like to know more about Call Translate?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "1f2dcb7c-4460-4cde-b40b-dd8185a9d5fb"
+  }, {
+    "condition": "$session.params.confidence \u003c .9",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Let me confirm, you want to $session.params.living_network_issue_type Call Translate. Is that correct?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "54caf767-93f7-4343-97cd-d09a016ddf5a"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"general information\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Call Translate allows you to have your words in a phone conversation translated into a chosen language in real time." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Call Translate costs $5 per month. You can also access a 7-day free trial in My Optus app." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will need to be on an eligible plan and this feature must be set up by you in My Optus app. After it's set up you will call as normal." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Languages that Call Translate supports are: Arabic, English, Filipino, French, German, Greek, Hindi, Indonesian, Italian, Japanese, Korean, Mandarin, Portuguese, Russian, Spanish, Thai, Turkish, Ukrainian and Vietnamese." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "More information",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "More information",
+                "tooltip": "More information",
+                "type": "button"
+              }, {
+                "actionText": "I'm OK",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "I'm OK",
+                "tooltip": "I'm OK",
+                "type": "button"
+              } ],
+              "title": "Let me know what I can help with now.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "What's next?",
+    "name": "c8a2d6e9-cc41-4b49-a584-8ed1663e78e9"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"deactivate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You can unsubscribe anytime in My Optus app." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Simply head to 'Call Translate', 'Settings' and then click 'Cancel'." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "Head to our website for more information or FAQ's.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/call-translate-en",
+                "style": "NORMAL_BUTTON",
+                "title": "Call Translate",
+                "tooltip": "Call Translate",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "b0f135c2-9748-44cc-9bf9-8afe1b012c19"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"activate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Once you are in My Optus app, Call Translate will be under 'Advanced Calling'. Follow the prompts to set up Call Translate." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ " The account holder will then receive a text message to confirm the request. Once it's approved just make a call as normal." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You can turn this feature on or off and only make translate calls when needed in My Optus app. This will not unsubscribe you." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "Head to our website for more information or FAQ's.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/call-translate-en",
+                "style": "NORMAL_BUTTON",
+                "title": "Call Translate",
+                "tooltip": "Call Translate",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "e0afdcc3-5f48-4798-a92e-e051582067c8"
+  } ]
+}

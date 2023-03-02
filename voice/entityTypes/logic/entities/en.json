@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "dialogflow",
+    "synonyms": [ "dialogflow" ],
+    "languageCode": "en"
+  }, {
+    "value": "cloud function",
+    "synonyms": [ "cloud", "cloud function", "function", "webhook" ],
+    "languageCode": "en"
+  } ]
+}

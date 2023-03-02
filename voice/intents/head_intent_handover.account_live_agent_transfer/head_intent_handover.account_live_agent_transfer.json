@@ -1,0 +1,17 @@
+{
+  "name": "4675a542-c56e-42be-8892-c85fdb1c8070",
+  "displayName": "head_intent_handover.account_live_agent_transfer",
+  "parameters": [ {
+    "id": "team_department",
+    "entityType": "@team_department"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "driver",
+    "value": "account"
+  }, {
+    "key": "use_case",
+    "value": "agent_handover"
+  } ],
+  "description": "Customer is asking to be connected to a live agent; includes requests for all teams; billing, financial hardship and so on"
+}

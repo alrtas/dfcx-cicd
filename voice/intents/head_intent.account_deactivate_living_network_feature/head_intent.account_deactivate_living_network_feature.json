@@ -1,0 +1,9 @@
+{
+  "name": "8893315c-e2c0-4874-9eb5-b3c92a488b4a",
+  "displayName": "head_intent.account_deactivate_living_network_feature",
+  "parameters": [ {
+    "id": "living_network_feature",
+    "entityType": "@living_network_feature"
+  } ],
+  "priority": 500000
+}

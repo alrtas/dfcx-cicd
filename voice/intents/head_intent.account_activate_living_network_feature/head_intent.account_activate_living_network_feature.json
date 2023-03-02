@@ -1,0 +1,9 @@
+{
+  "name": "e5982272-8a0c-4b0d-8a23-7de2bc72eb4c",
+  "displayName": "head_intent.account_activate_living_network_feature",
+  "parameters": [ {
+    "id": "living_network_feature",
+    "entityType": "@living_network_feature"
+  } ],
+  "priority": 500000
+}

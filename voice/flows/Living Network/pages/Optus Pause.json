@@ -1,0 +1,238 @@
+{
+  "name": "5e6aa2bc-4a4d-48bc-a5b8-2df1a0be38a7",
+  "displayName": "Optus Pause",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Ok, let me confirm, would you like to know more about Optus Pause?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "78b6130b-ecb6-4443-bf3c-c77b5ce5d864"
+  }, {
+    "condition": "$session.params.confidence \u003c .9",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Let me confirm, you want to $session.params.living_network_issue_type Optus Pause. Is that correct?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "e4e4c52f-030c-43d6-9c52-5aaeb6949aa5"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"general information\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Optus Pause allows you to temporarily stop your internet on Mobile and Home services. " ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "This feature can help manage your or your family's screen time so you can have a break." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You can choose which services you would like paused and set up a timer." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "For more information on Optus Pause and some troubleshooting questions follow the link below.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/optus-pause#faq",
+                "style": "NORMAL_BUTTON",
+                "title": "Optus Pause",
+                "tooltip": "Optus Pause",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "That's all",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "That's all",
+                "tooltip": "That's all",
+                "type": "button"
+              } ],
+              "title": "Let me know what you would like to do now.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "What's next?",
+    "name": "b18caac8-5e29-48bb-972c-87e76e5d6f3e"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"deactivate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To deactivate Optus Pause head to My Optus app and from the 'For You' screen select 'Optus Pause' and then select 'Stop'." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will set a timer for how long you would like to pause your internet, but you can stop the pause at any time." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "For more information on Optus Pause and some troubleshooting questions follow the link below.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/optus-pause#faq",
+                "style": "NORMAL_BUTTON",
+                "title": "Optus Pause",
+                "tooltip": "Optus Pause",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "8d852e51-9ade-4416-8768-8b1f851a2275"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"activate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To activate Optus Pause head to My Optus app and select 'For You' then select 'Optus Pause'. The prompts will then guide you through what best suits your needs." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will be able to select which services to pause and set a timer if you need to." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will still be able to call and text as normal while Optus Pause is on and there is no cost for this feature." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "For more information on Optus Pause and some troubleshooting questions follow the link below.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/optus-pause#faq",
+                "style": "NORMAL_BUTTON",
+                "title": "Optus Pause",
+                "tooltip": "Optus Pause",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "3b2255ad-ce65-4d5c-b589-60bac9b20882"
+  } ]
+}

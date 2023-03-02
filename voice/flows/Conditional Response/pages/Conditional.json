@@ -1,0 +1,39 @@
+{
+  "name": "6bcf1e03-03b1-46a5-84d1-2951c8d1eeaa",
+  "displayName": "Conditional",
+  "form": {
+    "parameters": [ {
+      "displayName": "logic",
+      "required": true,
+      "entityType": "@logic",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "How do you want to proceed? with the logic that is inside the cloud function or the logic inside dialogflow?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.logic = dialogflow",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Dialogflow",
+    "name": "4df66e94-45ca-4e23-b87b-5c530e72b14b"
+  }, {
+    "condition": "$session.params.logic = webhook",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Webhook",
+    "name": "3796f192-02d7-487b-8d89-27ce3739aac0"
+  } ]
+}

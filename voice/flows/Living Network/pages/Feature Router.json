@@ -1,0 +1,51 @@
+{
+  "name": "cacce04d-ae25-4b0e-b4a1-f2d4a1cc607e",
+  "displayName": "Feature Router",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.entry-confirmation-required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "lib_common_function",
+        "value": "confidence-score"
+      } ]
+    },
+    "name": "ad4bfe14-67e6-448f-a979-86783c6520ae"
+  }, {
+    "condition": "$session.params.living_network_feature = \"Caller ID\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "device_confirmed",
+        "value": false
+      } ]
+    },
+    "targetPage": "Caller ID",
+    "name": "0d3ef5c4-9423-40b6-a20a-e1f49e1e1c3a"
+  }, {
+    "condition": "$session.params.living_network_feature = \"Call Waiting\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Call Waiting",
+    "name": "bf0b5389-2dba-47b0-999a-e31f2d4863c5"
+  }, {
+    "condition": "$session.params.living_network_feature = \"Optus Pause\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Optus Pause",
+    "name": "0dee1351-3a85-4b35-b00e-ad16c66a5113"
+  }, {
+    "condition": "$session.params.living_network_feature = \"Call Translate\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Call Translate",
+    "name": "ac5e6510-2101-4761-aa0a-db3076c94b87"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "04607153-57fb-4edf-b42a-19cfe38f8c08",
+  "displayName": "webhook-parrot",
+  "genericWebService": {
+    "uri": "https://webhook-parrot-6hl4fxw7ya-ue.a.run.app"
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "d4ec2a33-7975-48d6-840c-e4a1d9fc7a23",
+  "displayName": "Dialogflow",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.hour \u003e 23",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Conditional 1 Dialogflow",
+    "name": "8b80df75-7729-415a-8da9-42260343ddeb"
+  }, {
+    "condition": "$session.params.hour \u003c= 23",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Conditional 2 Dialogflow",
+    "name": "2f65aece-a232-4ec9-b7a1-8641a07f1172"
+  } ]
+}

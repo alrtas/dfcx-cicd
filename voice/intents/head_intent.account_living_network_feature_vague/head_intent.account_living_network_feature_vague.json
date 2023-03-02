@@ -1,0 +1,9 @@
+{
+  "name": "be6fcf57-5716-47c2-aae1-d61ba013c529",
+  "displayName": "head_intent.account_living_network_feature_vague",
+  "parameters": [ {
+    "id": "living_network_feature",
+    "entityType": "@living_network_feature"
+  } ],
+  "priority": 500000
+}

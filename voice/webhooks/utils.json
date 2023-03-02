@@ -1,0 +1,10 @@
+{
+  "name": "2067ef62-933e-47cd-95fd-76f646877c7f",
+  "displayName": "utils",
+  "genericWebService": {
+    "uri": "https://australia-southeast1-cambirela.cloudfunctions.net/py-utils"
+  },
+  "timeout": {
+    "seconds": 15
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "3190b625-c952-4c1f-a257-b10460c75ad7",
+  "displayName": "Webhook",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.in_working = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Conditional 2 Webhook",
+    "name": "64a33da2-598d-49f2-9cba-c731afc3f036"
+  }, {
+    "condition": "$session.params.in_working = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Conditional 1 Webhook",
+    "name": "f7d46fc0-8ed8-42e6-8da4-fad0f03d8a5a"
+  } ]
+}

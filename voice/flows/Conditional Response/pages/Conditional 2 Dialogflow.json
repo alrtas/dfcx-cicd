@@ -1,0 +1,15 @@
+{
+  "name": "d362d98b-2ff9-4ae0-85f8-05741cc317ca",
+  "displayName": "Conditional 2 Dialogflow",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Here we have other cool message, informing the customer that they can say \"cancel\" at any point to end the conversation and come back to the begging" ]
+      },
+      "languageCode": "en"
+    } ]
+  }
+}

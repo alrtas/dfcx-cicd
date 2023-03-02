@@ -1,0 +1,15 @@
+{
+  "name": "7593e7e8-0f0a-4de6-b934-97cd6753b5c1",
+  "displayName": "Conditional 2 Webhook",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Here we have other cool message, informing the customer that they can say \"cancel\" at any point to end the conversation and come back to the begging" ]
+      },
+      "languageCode": "en"
+    } ]
+  }
+}

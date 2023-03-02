@@ -1,0 +1,15 @@
+{
+  "name": "f2e0d432-576b-4fcc-8fa2-e7116057083a",
+  "displayName": "Conditional 1 Dialogflow",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Well, that means that here we can have a cool messaging welcoming the customer and informing that they can say \"expert\" at any point in the conversations!" ]
+      },
+      "languageCode": "en"
+    } ]
+  }
+}

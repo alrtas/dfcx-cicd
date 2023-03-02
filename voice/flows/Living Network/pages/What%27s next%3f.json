@@ -1,0 +1,156 @@
+{
+  "name": "c1c38123-90b6-454a-ad72-2d777ed4d080",
+  "displayName": "What's next?",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "QR.living_network.activate",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": "activate"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "5aaaa77e-b6c0-42dd-9ca7-45298c16888c"
+  }, {
+    "intent": "QR.living_network.deactivate",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": "deactivate"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "fc5f091f-d257-48e5-b630-b0abaf9e91be"
+  }, {
+    "intent": "QR.living_network.more_info",
+    "condition": "$session.params.living_network_feature = \"Call Translate\" AND $session.params.living_network_issue_type = \"general information\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "Head to our website for more information or FAQ's.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/living-network/call-translate-en",
+                "style": "NORMAL_BUTTON",
+                "title": "Call Translate",
+                "tooltip": "Call Translate",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "69aa0713-0fbc-4ee8-ad00-9a5dd544a300"
+  }, {
+    "intent": "confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "name": "20f2672e-c3d5-4e3b-ae39-7a1535d31ade"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "That's all",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "That's all",
+                "tooltip": "That's all",
+                "type": "button"
+              } ],
+              "title": "I didn't quite catch that. Please let me know what you would like to do now.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "fed52341-a87a-4ba1-8eaa-d635761c7211"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "That's all",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "That's all",
+                "tooltip": "That's all",
+                "type": "button"
+              } ],
+              "title": "I still didn't get that. Let me know what you would like to do now. Please select an option below:",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "61026929-1622-4fb3-a579-78b52b8e2951"
+  }, {
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "handover_reason",
+        "value": "multiple_fallbacks"
+      } ]
+    },
+    "name": "144e9d47-b593-4436-8413-d473f9a092b8"
+  } ]
+}

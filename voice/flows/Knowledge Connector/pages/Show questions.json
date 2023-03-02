@@ -1,0 +1,23 @@
+{
+  "name": "97ddd4d1-349b-4b33-b21a-4d8b17b4b2ad",
+  "displayName": "Show questions",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "That is a lovely flow, am I right?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Other page",
+    "name": "23da1aee-5729-4ae7-8e73-e2fa5ed5d0d1"
+  } ]
+}

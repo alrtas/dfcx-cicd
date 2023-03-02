@@ -1,0 +1,15 @@
+{
+  "name": "8eba2b94-9713-43d1-b479-283a8f97222d",
+  "displayName": "Conditional 1 Webhook",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Well, that means that here we can have a cool messaging welcoming the customer and informing that they can say \"expert\" at any point in the conversations!" ]
+      },
+      "languageCode": "en"
+    } ]
+  }
+}

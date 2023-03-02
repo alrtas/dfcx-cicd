@@ -1,0 +1,350 @@
+{
+  "name": "ae1153ad-30af-4c97-8b6e-3e69a4dd665e",
+  "displayName": "Caller ID",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Ok, let me confirm, would you like to know more about Caller ID?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "c8e80343-73de-4dc8-bb66-8d1e53f8ddad"
+  }, {
+    "condition": "$session.params.confidence \u003c .9",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Let me confirm, you want to $session.params.living_network_issue_type Caller ID. Is that correct?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "caa818f0-550e-45d0-b68f-2af7ce042beb"
+  }, {
+    "condition": "$session.params.device_confirmed != true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Home Phone",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Home Phone",
+                "tooltip": "Home Phone",
+                "type": "button"
+              }, {
+                "actionText": "Mobile",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Mobile",
+                "tooltip": "Mobile",
+                "type": "button"
+              } ],
+              "title": "So I can tell you more about Caller ID let me know if you need help with your Home Phone or Mobile?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "device_type",
+        "value": "undefined"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "d11629e7-6e79-4a8f-85b9-ee40fe8779c3"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"general information\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Caller ID allows you to see the number of the person who is calling you, unless the caller has hidden their number." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will not see the caller's number if they are overseas, calling from a pay phone or have a blocked or silent number." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Caller ID also allows others to see your number when you are making a call." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "That's all for now",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "That's all for now",
+                "tooltip": "That's all for now",
+                "type": "button"
+              } ],
+              "title": "Let me know what you would like to do now?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "What's next?",
+    "name": "e56b2b8b-1264-460c-849d-9a36b98ecc10"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"activate\" AND $session.params.device_type = \"mobile\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To activate your Caller ID, you will need to log into your My Account." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Once you have logged in:\n1. Select the service\n2. Select the Settings tab\n3. Select Voice Call Settings\n4. Select Show who's calling\n5. To turn ON, select Show who's calling\n6. Click Save" ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "You can follow the link below for more information on Caller ID.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/for-you/support/answer?id=1397",
+                "style": "NORMAL_BUTTON",
+                "title": "Caller ID",
+                "tooltip": "Caller ID",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "dac37a1e-bca7-4d1a-acdf-006610f26bb5"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"deactivate\" AND $session.params.device_type = \"mobile\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To deactivate your Caller ID, you will need to log into your My Account." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Once you have logged in:\n1. Select the service\n2. Select the Settings tab\n3. Select Voice Call Settings\n4. Select Show who's calling\n5. To turn OFF, select Don't show who's calling\n6. Click Save" ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "If you would like to hide your number as a once off you can follow the steps below." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Dial 1831 or *31 before the phone number you want to call" ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "You can follow the link below for more information on Caller ID.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/for-you/support/answer?id=1397",
+                "style": "NORMAL_BUTTON",
+                "title": "Caller ID",
+                "tooltip": "Caller ID",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "78115bb2-4981-4fcc-91dc-9ef07b1bf994"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"activate\" AND $session.params.device_type = \"home phone\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To activate your Caller ID, you will need to log into your My Account." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Once you have logged in:\n1. Select the service\n2. Select the Settings tab\n3. Select Voice Call Settings\n4. Select Show who's calling\n5. To turn ON, select Show who's calling\n6. Click Save" ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Please note: For certain plans Caller ID will be $3 a month." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "You can follow the link below for more information on Caller ID.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/for-you/support/answer?id=1662",
+                "style": "NORMAL_BUTTON",
+                "title": "Caller ID",
+                "tooltip": "Caller ID",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "b8ecd3cc-b9f8-472c-a6b7-61a22120e20a"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"deactivate\" AND $session.params.device_type = \"home phone\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To deactivate your Caller ID, you will need to log into your My Account." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Once you have logged in:\n1. Select the service\n2. Select the Settings tab\n3. Select Voice Call Settings\n4. Select Show who's calling\n5. To turn OFF, select Don't show who's calling\n6. Click Save" ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "If you would like to hide your number as a once off you can follow the steps below." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "Dial 1831 or *31 before the phone number you want to call." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "title": "You can follow the link below for more information on Caller ID.",
+                "type": "text"
+              }, {
+                "actionType": "link",
+                "actionUrl": "https://www.optus.com.au/for-you/support/answer?id=1662",
+                "style": "NORMAL_BUTTON",
+                "title": "Caller ID",
+                "tooltip": "Caller ID",
+                "type": "button"
+              } ],
+              "type": "vertical"
+            },
+            "type": "RichContentEvent"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "f1a60601-b4d6-48eb-a767-7f5aba6a45e0"
+  } ]
+}

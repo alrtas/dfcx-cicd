@@ -1,0 +1,17 @@
+{
+  "name": "36527f84-14a9-4943-af19-e1d892d1fbc6",
+  "displayName": "Parrot Result",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The webhook tells me your name is $session.params.first_name and your last name is $session.params.last_name. I also know your friends are $sys.func.GET($session.params.friend_list, 0) and  $sys.func.GET($session.params.friend_list, 1)." ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "webhook-parrot",
+    "tag": "default"
+  }
+}

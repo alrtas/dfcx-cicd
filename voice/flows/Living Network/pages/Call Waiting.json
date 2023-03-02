@@ -1,0 +1,167 @@
+{
+  "name": "69a94c64-5c0e-451e-be86-dadbfc8ae094",
+  "displayName": "Call Waiting",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.living_network_issue_type = \"vague\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Ok, let me confirm, would you like to know more about Call Waiting?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "087a0e33-5c1b-4fb8-94af-699282194115"
+  }, {
+    "condition": "$session.params.confidence \u003c .9",
+    "triggerFulfillment": {
+      "messages": [ {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Yes",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Yes",
+                "tooltip": "Yes",
+                "type": "button"
+              }, {
+                "actionText": "No",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "No",
+                "tooltip": "No",
+                "type": "button"
+              } ],
+              "title": "Let me confirm, you want to $session.params.living_network_issue_type Call Waiting. Is that correct?",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "Entry Confirmation / Disambiguation",
+    "name": "ba8fb8cc-3211-43be-98fc-0d7fb018b047"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"general information\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Call Waiting lets you know if another call is coming through when you are already on the phone." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "When you are on the phone and a call comes through you will hear a series of beeps." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You will then be able to place the first call on hold and answer the second. " ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "This feature doesn't have a cost." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "payload": {
+          "channel": "LPDEFAULT",
+          "payload": [ {
+            "content": {
+              "elements": [ {
+                "actionText": "Activate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Activate",
+                "tooltip": "Activate",
+                "type": "button"
+              }, {
+                "actionText": "Deactivate",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "Deactivate",
+                "tooltip": "Deactivate",
+                "type": "button"
+              }, {
+                "actionText": "That's all",
+                "actionType": "publishText",
+                "style": "QUICK_REPLY_BUTTON",
+                "title": "That's all",
+                "tooltip": "That's all",
+                "type": "button"
+              } ],
+              "title": "Let me know what you would like to do now.",
+              "type": "vertical"
+            },
+            "type": "QuickReplies"
+          } ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "targetPage": "What's next?",
+    "name": "ae1c2a65-5e42-4093-9d6b-7e8cf2ee0737"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"deactivate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To turn off Call Waiting simply dial #43# from your keypad and then press the call button.\n\nYou can then dial *#43# and then press the 'call' button to see if call waiting is disabled." ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "e5711a81-1eea-4040-a49e-15f11e1d0e80"
+  }, {
+    "condition": "$session.params.living_network_issue_type = \"activate\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Call Waiting will already be activated and will need to be turned on through your handset." ]
+        },
+        "languageCode": "en-au"
+      }, {
+        "text": {
+          "text": [ "You can then dial *#43# and then press the call button to see if Call Waiting is enabled." ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "cf034201-9519-43a5-b2ba-0c0c0d3a66ae"
+  } ]
+}

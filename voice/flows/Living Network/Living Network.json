@@ -1,0 +1,97 @@
+{
+  "name": "d5ff47bc-fef9-4541-a4ea-1fa566ff8ce5",
+  "displayName": "Living Network",
+  "transitionRoutes": [ {
+    "intent": "head_intent.account_living_network_feature_vague",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": "vague"
+      } ]
+    },
+    "targetPage": "Feature Router",
+    "name": "587aa9d2-c671-48f8-aacd-02dc3b7875c3"
+  }, {
+    "intent": "head_intent.account_activate_living_network_feature",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": "activate"
+      } ]
+    },
+    "targetPage": "Feature Router",
+    "name": "da172659-9a8c-4de4-842e-50eb935d087d"
+  }, {
+    "intent": "head_intent.account_deactivate_living_network_feature",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "living_network_issue_type",
+        "value": "deactivate"
+      } ]
+    },
+    "targetPage": "Feature Router",
+    "name": "b78cefb6-73de-4f77-bddb-cb7e6544e997"
+  }, {
+    "intent": "head_intent_handover.account_live_agent_transfer",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "handover_reason",
+        "value": "human_request"
+      } ]
+    },
+    "name": "ac6bf820-fb77-419d-a54f-768244a3641c"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Feature Router",
+    "name": "0374748f-4839-4eea-b6ed-99f60d90a924"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "32babcb1-f754-48bf-9264-cdd5a3f42016"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en-au"
+      } ]
+    },
+    "name": "19b30555-eb92-418c-90af-c7c06eb48af1"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_MANUAL",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  },
+  "knowledgeConnectorSettings": {
+    "enabled": true,
+    "knowledgeBaseIds": [ "projects/et-ai-dev-virtual-agent/locations/global/knowledgeBases/MTM0NDA4MDQ1MjE2NDMwODE3Mjg" ],
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$request.knowledge.answers[0]" ]
+        },
+        "languageCode": "en"
+      } ]
+    }
+  }
+}
