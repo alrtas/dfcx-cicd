@@ -1,29 +1,25 @@
 {
   "trainingPhrases": [ {
     "parts": [ {
-      "text": "não quero saber",
-      "auto": true
+      "text": "não quero saber"
     } ],
     "repeatCount": 1,
     "languageCode": "pt-br"
   }, {
     "parts": [ {
-      "text": "não posso",
-      "auto": true
+      "text": "não posso"
     } ],
     "repeatCount": 1,
     "languageCode": "pt-br"
   }, {
     "parts": [ {
-      "text": "não quero",
-      "auto": true
+      "text": "não quero"
     } ],
     "repeatCount": 1,
     "languageCode": "pt-br"
   }, {
     "parts": [ {
-      "text": "não",
-      "auto": true
+      "text": "não"
     } ],
     "repeatCount": 1,
     "languageCode": "pt-br"

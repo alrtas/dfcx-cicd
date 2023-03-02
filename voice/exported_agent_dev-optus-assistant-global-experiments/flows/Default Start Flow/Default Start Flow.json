@@ -46,7 +46,7 @@
     "targetFlow": "Webhook Parrot",
     "name": "0463b7c3-20b1-41a7-95d4-65fd9a7d886e"
   }, {
-    "intent": "não",
+    "intent": "nao",
     "triggerFulfillment": {
     
     },
